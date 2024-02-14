@@ -1,0 +1,16 @@
+
+struct Phone {     field in this struct
+    name: String,
+    weight:u32,     field 'weight' is never read '#[warn(dead_code)]' on by default
+    }
+
+    impl Phone {
+        fn get_name(&self) {
+            println!("Phone name: {}", self.name);
+        }
+    }
+
+    fn main() {
+        let phone: Phone = {name: String::from("iphone 11"), weight: 110};
+        phone.get_name();
+    }
